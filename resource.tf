@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "storeterra" {
 }
  
 resource "azurerm_storage_account" "saterra" {
-    name                     = "terra-nb"
+    name                     = "terranb"
     resource_group_name      = azurerm_resource_group.storeterra.name
     location                 = azurerm_resource_group.storeterra.location
     account_tier             = "Standard"
@@ -12,7 +12,7 @@ resource "azurerm_storage_account" "saterra" {
 }
  
 resource "azurerm_storage_container" "sacontainer" {
-    name                  = "terra-container-nb"
+    name                  = "terracontainernb"
     storage_account_name  = azurerm_storage_account.saterra.name
     container_access_type = "private"
 }
